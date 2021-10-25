@@ -13,5 +13,5 @@ export interface IQuestionContext {
 }
 
 export type IDefaultValues = {
-  numberofQuestions: number;
+  numberofQuestions: string;
 };

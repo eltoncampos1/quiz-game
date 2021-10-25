@@ -1,7 +1,11 @@
+import {useRef, useEffect} from 'react'
 import { Input, Button, Typography } from '@mui/material';
+import { Field, FieldProps } from 'formik';
 import { Box  } from "@mui/system";
+import { IDefaultValues } from '../../context/types';
 
 export const ChooseQuestion = () => {
+    
   return (
     <Box sx={{ display: 'flex', 
         flexDirection: 'column',
@@ -27,8 +31,19 @@ export const ChooseQuestion = () => {
             </Typography>
 
             <Box sx={{ width: '100%', display: 'flex' }}>
+
+            <Field>
+              {({
+                field,
+                form,
+              }: FieldProps<string[], IDefaultValues>) => (
+                
                 <Input 
-                    placeholder="Digite um valor" 
+                    name="numberofQuestions"
+                    value={form.values.numberofQuestions}
+                    onChange={e =>
+                        form.setFieldValue('numberofQuestions', Number(e.target.value))
+                      }
                     type="number"
                     sx={{ 
                         width: '90%', 
@@ -36,6 +51,8 @@ export const ChooseQuestion = () => {
                         border: 'none',
                     }}
                 />
+              )}
+            </Field>
                 <Button type="submit" variant="contained" sx={{ background: '#00bdbf', color: '#fff', marginLeft: '1rem' }}>
                     Avançar
                 </Button>

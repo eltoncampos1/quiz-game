@@ -9,23 +9,24 @@ export const QuestionsProvider = ( { children }: QuestionsProviderProps) => {
         Steps.ChooseNumberOFQuestions,
       );
 
-    const defaultValues :IDefaultValues = {
-        numberofQuestions: 0,
-    }
-
-    const [formValues, setFormValues] =
+      
+      
+      const defaultValues :IDefaultValues = {
+          numberofQuestions: '',
+        }
+        
+        const [formValues, setFormValues] =
         useState<IDefaultValues>(defaultValues);
-
+        
+        console.log(formValues);
     const handleNext = (values: IDefaultValues) => {
         setFormValues(values);
        
-        setCurrentStep((currentStep) => currentStep + 1);
+        setCurrentStep(currentStep + 1);
     };
 
-    const handlePrev = (values: IDefaultValues) => {
-        setFormValues(values);
-       
-        setCurrentStep((currentStep) => currentStep - 1);
+    const handlePrev = () => {
+        setCurrentStep(currentStep - 1);
     };
 
     return (
