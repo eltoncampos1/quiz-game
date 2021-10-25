@@ -1,7 +1,11 @@
+import { QuestionsProvider } from "./context/questions"
+import { QuestionsLayout } from "./screens/QuestionsLayout"
 
 function App() {
   return (
-    <div>hello</div>
+    <QuestionsProvider>
+      <QuestionsLayout />
+    </QuestionsProvider>
   )
 }
 
