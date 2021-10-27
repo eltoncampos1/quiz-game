@@ -32,6 +32,9 @@
         "react/react-in-jsx-scope": "off",
         "import/no-extraneous-dependencies": "off",
         "no-shadow": "off",
+        "camelcase": "off",
+        "no-plusplus": "off",
+        "no-param-reassign": "off",
         "import/extensions": [
             "error",
             "ignorePackages",
