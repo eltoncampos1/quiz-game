@@ -9,8 +9,6 @@ export const QuestionsProvider = ( { children }: QuestionsProviderProps) => {
         Steps.ChooseNumberOFQuestions,
       );
 
-      
-      
       const defaultValues :IDefaultValues = {
           numberofQuestions: '',
         }
@@ -18,7 +16,6 @@ export const QuestionsProvider = ( { children }: QuestionsProviderProps) => {
         const [formValues, setFormValues] =
         useState<IDefaultValues>(defaultValues);
         
-        console.log(formValues);
     const handleNext = (values: IDefaultValues) => {
         setFormValues(values);
        
